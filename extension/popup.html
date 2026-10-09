@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aiges</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup">
+
+    <!-- ================= CHECKING STATE ================= -->
+    <div data-page="checking" class="page active">
+      <div class="popup-header">
+        <div class="brand">
+          <svg class="brand-mark" viewBox="0 0 26 26" fill="none"><path d="M13 1L23 5V12C23 18.5 18.9 23.7 13 25C7.1 23.7 3 18.5 3 12V5L13 1Z" fill="#2954E5"/><path d="M8.5 13L11.5 16L18 9" stroke="white" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="brand-name">Aiges</span>
+        </div>
+      </div>
+      <div class="popup-body" style="align-items:center; text-align:center; padding-top:50px; padding-bottom:50px;">
+        <div class="ping-wrap" style="--ring-color:41,84,229;">
+          <div class="ping-ring r1"></div>
+          <div class="ping-ring r2"></div>
+          <div class="ping-ring r3"></div>
+          <div class="ping-core">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#2954E5" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          </div>
+        </div>
+        <p class="status-sub">Checking this site...</p>
+      </div>
+    </div>
+
+    <!-- ================= OFFLINE / ERROR STATE ================= -->
+    <div data-page="offline" class="page">
+      <div class="popup-header">
+        <div class="brand">
+          <svg class="brand-mark" viewBox="0 0 26 26" fill="none"><path d="M13 1L23 5V12C23 18.5 18.9 23.7 13 25C7.1 23.7 3 18.5 3 12V5L13 1Z" fill="#2954E5"/><path d="M8.5 13L11.5 16L18 9" stroke="white" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="brand-name">Aiges</span>
+          <span class="status-chip" style="color:#68708A;background:#EEF1FA;border-color:#E4E8F4;">Offline</span>
+        </div>
+      </div>
+      <div class="popup-body" style="padding-top:40px; padding-bottom:40px;">
+        <div class="status-stage">
+          <h2 class="status-title" style="color:#68708A;">Can't reach Aiges</h2>
+          <p class="status-sub">Make sure the backend is running at <strong>127.0.0.1:8000</strong>, then try again.</p>
+        </div>
+        <button class="btn-primary" id="retryBtn">Retry</button>
+      </div>
+    </div>
+
+    <!-- ================= SAFE STATE ================= -->
+    <div data-page="safe" class="page">
+      <div class="popup-header">
+        <div class="brand">
+          <svg class="brand-mark" viewBox="0 0 26 26" fill="none"><path d="M13 1L23 5V12C23 18.5 18.9 23.7 13 25C7.1 23.7 3 18.5 3 12V5L13 1Z" fill="#2954E5"/><path d="M8.5 13L11.5 16L18 9" stroke="white" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="brand-name">Aiges</span>
+          <span class="status-chip safe">Protected</span>
+        </div>
+        <div class="header-icons">
+          <button class="icon-btn" id="settingsBtn" title="Settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.34 1.87l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.7 1.7 0 00-1.87-.34 1.7 1.7 0 00-1.04 1.56V21a2 2 0 11-4 0v-.09A1.7 1.7 0 009 19.4a1.7 1.7 0 00-1.87.34l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.7 1.7 0 004.6 15a1.7 1.7 0 00-1.56-1.04H3a2 2 0 110-4h.09A1.7 1.7 0 004.6 9a1.7 1.7 0 00-.34-1.87l-.06-.06a2 2 0 112.83-2.83l.06.06A1.7 1.7 0 009 4.6a1.7 1.7 0 001.04-1.56V3a2 2 0 114 0v.09a1.7 1.7 0 001.04 1.56 1.7 1.7 0 001.87-.34l.06-.06a2 2 0 112.83 2.83l-.06.06A1.7 1.7 0 0019.4 9a1.7 1.7 0 001.56 1.04H21a2 2 0 110 4h-.09a1.7 1.7 0 00-1.56 1.04z"/></svg></button>
+        </div>
+      </div>
+
+      <div class="popup-body state-safe" style="--ring-color:var(--safe-ring)">
+        <div class="status-stage">
+          <div class="ping-wrap">
+            <div class="ping-ring r1"></div>
+            <div class="ping-ring r2"></div>
+            <div class="ping-ring r3"></div>
+            <div class="ping-core">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L20 5.5V11C20 16.2 16.6 20.7 12 22C7.4 20.7 4 16.2 4 11V5.5L12 2Z" fill="var(--safe)"/><path d="M8.5 12L10.8 14.3L15.5 9.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <h2 class="status-title safe" id="safeTitle">You're protected</h2>
+          <p class="status-sub" id="safeSub">This website looks safe.</p>
+        </div>
+
+        <div class="site-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+          <span class="url" id="currentDomainSafe">example.com</span>
+        </div>
+
+        <button class="site-row link" id="viewReportBtn" style="margin-bottom:14px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6M9 16h6M9 8h6M5 4h14v16l-5-3-4 3-5-3V4z"/></svg>
+          <span class="url">View site report</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+
+        <div class="toggle-row">
+          <div>
+            <div class="label">Protection <span id="protectionState">ON</span></div>
+            <div class="sub" id="safeThreatLine">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              No threats detected
+            </div>
+          </div>
+          <button class="toggle on" id="protectionToggle" aria-pressed="true"></button>
+        </div>
+      </div>
+
+      <nav class="popup-nav">
+        <button class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Home</button>
+        <button class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>History</button>
+        <button class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V4h13l-2 5 2 5H4"/></svg>Report</button>
+        <button class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Settings</button>
+      </nav>
+    </div>
+
+    <!-- ================= WARNING STATE ================= -->
+    <div data-page="risk" class="page">
+      <div class="popup-header">
+        <div class="brand">
+          <svg class="brand-mark" viewBox="0 0 26 26" fill="none"><path d="M13 1L23 5V12C23 18.5 18.9 23.7 13 25C7.1 23.7 3 18.5 3 12V5L13 1Z" fill="#2954E5"/><path d="M8.5 13L11.5 16L18 9" stroke="white" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="brand-name">Aiges</span>
+          <span class="status-chip risk">At risk</span>
+        </div>
+        <div class="header-icons">
+          <button class="icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+        </div>
+      </div>
+
+      <div class="popup-body state-risk" style="--ring-color:var(--risk-ring)">
+        <div class="status-stage">
+          <div class="ping-wrap">
+            <div class="ping-ring r1"></div>
+            <div class="ping-ring r2"></div>
+            <div class="ping-ring r3"></div>
+            <div class="ping-core">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="var(--risk)"/><path d="M12 7v6" stroke="white" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1.1" fill="white"/></svg>
+            </div>
+          </div>
+          <h2 class="status-title risk" id="riskTitle">Warning: risky site</h2>
+          <p class="status-sub" id="riskSub">This site may be unsafe. Proceed with caution.</p>
+        </div>
+
+        <div id="alertRows"></div>
+
+        <button class="btn-primary" id="goBackBtn">Go back (Recommended)</button>
+        <button class="btn-secondary" id="proceedBtn">Proceed anyway</button>
+      </div>
+
+      <nav class="popup-nav">
+        <button class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Home</button>
+        <button class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>History</button>
+        <button class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V4h13l-2 5 2 5H4"/></svg>Report</button>
+        <button class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Settings</button>
+      </nav>
+    </div>
+
+    <!-- ================= SITE INSIGHTS STATE ================= -->
+    <div data-page="insight" class="page">
+      <div class="popup-header">
+        <div class="brand">
+          <svg class="brand-mark" viewBox="0 0 26 26" fill="none"><path d="M13 1L23 5V12C23 18.5 18.9 23.7 13 25C7.1 23.7 3 18.5 3 12V5L13 1Z" fill="#2954E5"/><path d="M8.5 13L11.5 16L18 9" stroke="white" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="brand-name">Aiges</span>
+        </div>
+        <div class="header-icons">
+          <button class="icon-btn" id="closeReportBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+        </div>
+      </div>
+
+      <div class="popup-body">
+        <div class="insight-head">
+          <div>
+            <h2>Site overview</h2>
+            <div class="insight-domain"><span class="url" id="currentDomainInsight">example-suspicious.com</span></div>
+          </div>
+          <span class="badge-risk" id="insightBadge">High risk</span>
+        </div>
+
+        <div class="banner">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+          <p id="insightBanner">This site has been flagged as risky by Aiges's detection engine.</p>
+        </div>
+
+        <div class="detail-list">
+          <div class="detail-row"><span class="label">Risk score</span><span class="value hi" id="detailRiskScore">—/100</span></div>
+          <div class="detail-row"><span class="label">Verdict</span><span class="value hi" id="detailVerdict">—</span></div>
+          <div class="detail-row"><span class="label">Typosquat suspected</span><span class="value neutral" id="detailTyposquat">—</span></div>
+          <div class="detail-row"><span class="label">Last scanned</span><span class="value neutral" id="detailScanned">—</span></div>
+          <div class="detail-row"><span class="label">Source</span><span class="value neutral" id="detailCached">—</span></div>
+        </div>
+
+        <div class="detail-list" id="detailReasonsWrap" style="margin-top:14px;">
+          <div class="label" style="padding:10px 14px 0;">Reasons</div>
+          <ul id="detailReasons" style="margin:0; padding:8px 14px 14px 30px; font-size:13px; color:var(--ink-soft); line-height:1.6;"></ul>
+        </div>
+      </div>
+
+      <nav class="popup-nav">
+        <button class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Home</button>
+        <button class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>History</button>
+        <button class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V4h13l-2 5 2 5H4"/></svg>Report</button>
+        <button class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Settings</button>
+      </nav>
+    </div>
+
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

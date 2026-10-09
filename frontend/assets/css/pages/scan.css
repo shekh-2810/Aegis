@@ -1,0 +1,140 @@
+/* --- Link scanner widget ------------------------------------------------ */
+
+.scanner {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-6);
+  margin: var(--space-6) 0;
+}
+
+.scanner__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.scanner__head .icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--brand-tint);
+  color: var(--brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-md);
+  flex-shrink: 0;
+}
+
+.scanner__head h2 {
+  font-size: var(--text-md);
+  margin: 0;
+}
+
+.scanner__sub {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.scanner__form {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.scanner__form input[type="text"] {
+  flex: 1 1 320px;
+  min-width: 0;
+  height: 46px;
+  padding: 0 var(--space-4);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  font-family: var(--font-sans);
+}
+
+.scanner__form input[type="text"]:focus {
+  outline: none;
+  border-color: var(--brand);
+}
+
+.scanner__form button {
+  height: 46px;
+  padding: 0 var(--space-6);
+  flex-shrink: 0;
+}
+
+.scanner__result {
+  margin-top: var(--space-5);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  display: none;
+}
+
+.scanner__result.is-visible {
+  display: block;
+}
+
+.scanner__result--safe {
+  background: var(--success-tint);
+  border-color: var(--success-border);
+}
+
+.scanner__result--suspicious {
+  background: var(--warning-tint);
+  border-color: var(--warning);
+}
+
+.scanner__result--malicious {
+  background: var(--danger-tint);
+  border-color: var(--danger-border);
+}
+
+.scanner__result--unknown {
+  background: var(--surface-muted);
+  border-color: var(--border);
+}
+
+.scanner__verdict {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 700;
+  font-size: var(--text-base);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: var(--space-2);
+}
+
+.scanner__result--safe .scanner__verdict { color: var(--success); }
+.scanner__result--suspicious .scanner__verdict { color: var(--warning); }
+.scanner__result--malicious .scanner__verdict { color: var(--danger); }
+.scanner__result--unknown .scanner__verdict { color: var(--text-muted); }
+
+.scanner__score {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.scanner__reasons {
+  margin: 0;
+  padding-left: 1.1em;
+  font-size: var(--text-sm);
+  color: var(--text);
+}
+
+.scanner__reasons li {
+  margin-bottom: var(--space-1);
+}
+
+.scanner__error {
+  color: var(--danger);
+  font-size: var(--text-sm);
+  margin-top: var(--space-3);
+}

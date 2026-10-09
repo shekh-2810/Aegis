@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aiges — Cybersecurity News</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/news.css">
+  <link rel="stylesheet" href="assets/css/pages/scan.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container container--wide site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark"><i class="fa-solid fa-shield-halved"></i></span>
+        Aiges
+      </a>
+
+      <label class="site-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span class="visually-hidden">Search articles</span>
+        <input type="search" placeholder="Search cybersecurity news...">
+      </label>
+
+      <a class="nav-toggle" href="#primary-nav" aria-label="Open navigation">
+        <i class="fa-solid fa-bars"></i>
+      </a>
+
+      <nav class="site-nav" id="primary-nav" aria-label="Primary">
+        <a class="site-nav__link is-active" href="index.html">Home</a>
+        <a class="site-nav__link" href="report/step-1-details.html">Report Incident</a>
+        <a class="site-nav__link" href="guidance.html">Guidance</a>
+        <a class="site-nav__link" href="track-status.html">Track Status</a>
+      </nav>
+
+      <div class="site-header__actions" id="header-actions">
+        <a class="btn btn--primary" href="login.html">
+          <i class="fa-regular fa-user"></i> Log in
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="categories">
+    <nav class="container container--wide categories__inner" id="category-nav" aria-label="Article categories">
+      <a class="categories__item is-active" href="#" data-category="All">All</a>
+      <a class="categories__item" href="#" data-category="Cybercrime">Cybercrime</a>
+      <a class="categories__item" href="#" data-category="Phishing">Phishing</a>
+      <a class="categories__item" href="#" data-category="Fraud">Fraud</a>
+      <a class="categories__item" href="#" data-category="Malware">Malware</a>
+      <a class="categories__item" href="#" data-category="Data Breach">Data Breach</a>
+      <a class="categories__item" href="#" data-category="Ransomware">Ransomware</a>
+      <a class="categories__item" href="#" data-category="Scams">Scams</a>
+      <a class="categories__item" href="#" data-category="Identity Theft">Identity Theft</a>
+      <a class="categories__more" href="#">View all</a>
+    </nav>
+  </div>
+
+  <div class="breaking">
+    <div class="container container--wide breaking__inner">
+      <span class="breaking__label">BREAKING NEWS</span>
+      <p class="breaking__text" id="breaking-text">New UPI Scam Targets Users Through Fake Payment Gateway Links</p>
+      <a class="breaking__link" href="#">Read More <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+
+  <main class="container container--wide page">
+
+    <section class="scanner">
+      <div class="scanner__head">
+        <span class="icon-box"><i class="fa-solid fa-magnifying-glass-chart"></i></span>
+        <h2>Check a link before you click</h2>
+      </div>
+      <p class="scanner__sub">
+        Paste a URL to check it against Aiges's phishing &amp; scam heuristics.
+      </p>
+      <form id="scanner-form" class="scanner__form">
+        <label class="visually-hidden" for="scanner-input">URL to check</label>
+        <input id="scanner-input" type="text" placeholder="e.g. https://example.com/login" required>
+        <button class="btn btn--primary" type="submit">
+          <i class="fa-solid fa-shield-halved"></i> Check link
+        </button>
+      </form>
+      <div id="scanner-result" class="scanner__result" role="status"></div>
+    </section>
+
+    <section class="scanner" id="threat-feed-section" style="display:none;">
+      <div class="scanner__head">
+        <span class="icon-box"><i class="fa-solid fa-satellite-dish"></i></span>
+        <h2>Recently flagged lookalike domains</h2>
+      </div>
+      <p class="scanner__sub">
+        Proactively found by Aiges's crawler — not reported by a user, just
+        patterns the system noticed on its own.
+      </p>
+      <ul id="threat-feed-list" class="scanner__reasons" style="list-style:none; padding:0;"></ul>
+    </section>
+
+    <article class="featured" id="featured-story">
+      <span class="featured__tag">FEATURED</span>
+      <h1 class="featured__title" id="featured-title">Massive Data Breach Exposes 2.5 Billion User Records Online</h1>
+      <p class="featured__excerpt" id="featured-excerpt">
+        Researchers discovered a massive unprotected database containing billions of records
+        including emails, passwords and financial data.
+      </p>
+      <p class="featured__meta" id="featured-meta">22 Aug 2026 &bull; Cybercrime</p>
+      <a class="btn" href="#">Read Full Story <i class="fa-solid fa-arrow-right"></i></a>
+    </article>
+
+    <div class="section-header">
+      <h2>Trending Now</h2>
+    </div>
+
+    <div class="trending" id="trending-list">
+      <a class="trending__card" href="#">
+        <span class="trending__rank">01</span>
+        <h3 class="trending__title">New WhatsApp Scam Steals OTP Codes</h3>
+      </a>
+      <a class="trending__card" href="#">
+        <span class="trending__rank">02</span>
+        <h3 class="trending__title">Fake Job Offers on LinkedIn</h3>
+      </a>
+      <a class="trending__card" href="#">
+        <span class="trending__rank">03</span>
+        <h3 class="trending__title">Ransomware Attack Hits Hospital Network</h3>
+      </a>
+      <a class="trending__card" href="#">
+        <span class="trending__rank">04</span>
+        <h3 class="trending__title">How Hackers Steal Cookies</h3>
+      </a>
+    </div>
+
+    <div class="section-header">
+      <h2 id="feed-heading">Latest Articles</h2>
+    </div>
+
+    <div class="feed">
+      <div class="article-list" id="article-list">
+
+        <a class="article" href="#">
+          <span class="tag">PHISHING</span>
+          <h3 class="article__title">5 Common Phishing Tricks To Watch Out For</h3>
+          <p class="article__excerpt">
+            Attackers rely on a handful of repeatable patterns. Learn to spot them before you click.
+          </p>
+          <p class="article__meta">22 Aug 2026 &bull; 4 min read</p>
+        </a>
+
+        <a class="article" href="#">
+          <span class="tag">FRAUD</span>
+          <h3 class="article__title">UPI Fraud: Latest Techniques Used by Scammers</h3>
+          <p class="article__excerpt">
+            Payment request reversals, fake collect calls and cloned gateways — how each one works.
+          </p>
+          <p class="article__meta">21 Aug 2026 &bull; 6 min read</p>
+        </a>
+
+        <a class="article" href="#">
+          <span class="tag">CYBERCRIME</span>
+          <h3 class="article__title">Dark Web Markets: What They Sell and How They Work</h3>
+          <p class="article__excerpt">
+            A look inside the economics of stolen credentials and why your data is worth so little.
+          </p>
+          <p class="article__meta">21 Aug 2026 &bull; 7 min read</p>
+        </a>
+
+      </div>
+
+      <aside class="sidebar">
+        <section class="card">
+          <h3>Cyber Alerts</h3>
+          <div id="alert-list">
+            <div class="alert-item">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <p>Critical Vulnerability in Popular Plugin</p>
+            </div>
+            <div class="alert-item">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <p>Beware of Fake Amazon Refund Emails</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="card newsletter">
+          <h3>Stay Protected, Stay Informed</h3>
+          <p>Get the week's biggest threats delivered to your inbox.</p>
+          <form id="newsletter-form">
+            <label class="visually-hidden" for="newsletter-email">Email address</label>
+            <input id="newsletter-email" type="email" placeholder="you@example.com" required>
+            <button class="btn btn--block" type="submit">Subscribe</button>
+          </form>
+          <p id="newsletter-message" class="field__hint" role="status"></p>
+        </section>
+      </aside>
+    </div>
+
+    <section class="ai-cta">
+      <div>
+        <h2>Generate Cybercrime Report with AI</h2>
+        <p>Ask questions, get insights and create detailed reports.</p>
+      </div>
+      <a class="btn btn--gradient btn--lg" href="report/step-1-details.html">
+        Generate report <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container container--wide site-footer__inner">
+      <div>
+        <strong>Aiges</strong>
+        <p class="site-footer__tagline">Safer people. Safer web.</p>
+      </div>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="welcome.html">About</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="guidance.html">Help</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/header-auth.js"></script>
+  <script src="assets/js/home.js"></script>
+  <script src="assets/js/scan.js"></script>
+</body>
+</html>

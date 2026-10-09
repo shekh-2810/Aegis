@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aiges — Log in</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/login.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark"><i class="fa-solid fa-shield-halved"></i></span>
+        Aiges
+      </a>
+
+      <a class="nav-toggle" href="#primary-nav" aria-label="Open navigation">
+        <i class="fa-solid fa-bars"></i>
+      </a>
+
+      <nav class="site-nav" id="primary-nav" aria-label="Primary">
+        <a class="site-nav__link" href="index.html">Home</a>
+        <a class="site-nav__link" href="report/step-1-details.html">Report Incident</a>
+        <a class="site-nav__link" href="guidance.html">Guidance</a>
+        <a class="site-nav__link" href="track-status.html">Track Status</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container auth">
+
+    <section class="auth__intro">
+      <span class="tag">WELCOME TO AIGES</span>
+      <h1 class="auth__title">Safer People.<br>Safer Web.</h1>
+      <p class="auth__text">
+        Report cyber incidents, get AI-powered guidance, track your reports,
+        and stay informed — all in one place.
+      </p>
+
+      <div class="auth__features">
+        <div class="auth-feature">
+          <div class="icon-box icon-box--brand"><i class="fa-regular fa-file-lines"></i></div>
+          <div>
+            <h4>Report Incidents</h4>
+            <p>Turn your experience into an official report with AI assistance.</p>
+          </div>
+        </div>
+        <div class="auth-feature">
+          <div class="icon-box icon-box--warning"><i class="fa-solid fa-bolt"></i></div>
+          <div>
+            <h4>Get Guidance</h4>
+            <p>Learn how to stay safe and recover quickly.</p>
+          </div>
+        </div>
+        <div class="auth-feature">
+          <div class="icon-box icon-box--success"><i class="fa-solid fa-chart-column"></i></div>
+          <div>
+            <h4>Track Status</h4>
+            <p>Check the progress of your reports anytime.</p>
+          </div>
+        </div>
+        <div class="auth-feature">
+          <div class="icon-box icon-box--accent"><i class="fa-solid fa-book-open"></i></div>
+          <div>
+            <h4>Stay Informed</h4>
+            <p>Read the latest cybersecurity news and alerts.</p>
+          </div>
+        </div>
+      </div>
+
+      <blockquote class="quote">
+        <p>A safer digital world<br>is a stronger tomorrow.</p>
+        <cite>— Aiges</cite>
+      </blockquote>
+    </section>
+
+    <section class="auth-card">
+      <h2 id="auth-heading">Welcome back</h2>
+      <p class="auth-card__lede" id="auth-lede">
+        Log in to your Aiges account to access your reports, guidance and more.
+      </p>
+
+      <form id="auth-form">
+        <div class="field" id="name-field" hidden>
+          <label class="field__label" for="name">Full name</label>
+          <input class="input" id="name" type="text" placeholder="Your name">
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="email">Email address</label>
+          <input class="input" id="email" type="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="field password-field">
+          <label class="field__label" for="password">Password</label>
+          <input class="input" id="password" type="password" placeholder="Enter your password" required minlength="8">
+          <button class="password-toggle" type="button" aria-label="Show password" id="password-toggle">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+        </div>
+
+        <a class="forgot" href="#">Forgot password?</a>
+
+        <p id="auth-message" class="field__hint" role="status"></p>
+
+        <button class="btn btn--primary btn--block" type="submit" id="auth-submit">Log in</button>
+      </form>
+
+      <p class="divider">OR</p>
+
+      <div class="social-buttons">
+        <a class="btn btn--ghost btn--block" href="#">
+          <i class="fa-brands fa-google"></i> Continue with Google
+        </a>
+        <a class="btn btn--ghost btn--block" href="#">
+          <i class="fa-brands fa-github"></i> Continue with GitHub
+        </a>
+      </div>
+
+      <p class="auth-card__switch" id="auth-switch">Don't have an account? <a href="#" id="auth-toggle-link">Create one</a></p>
+
+      <p class="security-note">
+        <i class="fa-solid fa-lock"></i>
+        Your data is protected with 256-bit encryption. We never share your
+        information without your consent.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <strong>Aiges</strong>
+        <p class="site-footer__tagline">Safer people. Safer web.</p>
+      </div>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="welcome.html">About</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="guidance.html">Help</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/login.js"></script>
+</body>
+</html>

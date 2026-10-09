@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aiges — Report: Additional Information</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages/report.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html">
+        <span class="brand__mark"><i class="fa-solid fa-shield-halved"></i></span>
+        Aiges
+      </a>
+
+      <a class="nav-toggle" href="#primary-nav" aria-label="Open navigation">
+        <i class="fa-solid fa-bars"></i>
+      </a>
+
+      <nav class="site-nav" id="primary-nav" aria-label="Primary">
+        <a class="site-nav__link" href="../index.html">Home</a>
+        <a class="site-nav__link is-active" href="step-1-details.html">Report Incident</a>
+        <a class="site-nav__link" href="../guidance.html">Guidance</a>
+        <a class="site-nav__link" href="../track-status.html">Track Status</a>
+      </nav>
+
+      <div class="site-header__actions" id="header-actions">
+        <a class="btn btn--primary" href="../login.html">
+          <i class="fa-regular fa-user"></i> Log in
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page">
+
+    <a class="page__back" href="step-1-details.html">
+      <i class="fa-solid fa-arrow-left"></i> Back
+    </a>
+
+    <h1 class="page__title">Additional Information</h1>
+    <p class="page__subtitle">
+      Help us understand the incident better by providing some more details.
+    </p>
+
+    <ol class="stepper">
+      <li class="stepper__step is-done">
+        <span class="stepper__marker"><i class="fa-solid fa-check"></i></span>
+        <span class="stepper__label">Incident details</span>
+      </li>
+      <li class="stepper__step is-active">
+        <span class="stepper__marker">2</span>
+        <span class="stepper__label">Additional info</span>
+      </li>
+      <li class="stepper__step">
+        <span class="stepper__marker">3</span>
+        <span class="stepper__label">Review &amp; AI generate</span>
+      </li>
+      <li class="stepper__step">
+        <span class="stepper__marker">4</span>
+        <span class="stepper__label">Download &amp; submit</span>
+      </li>
+    </ol>
+
+    <div class="split">
+
+      <form id="additional-form">
+
+        <section class="card">
+          <div class="card__header">
+            <div class="icon-box icon-box--brand"><i class="fa-solid fa-wallet"></i></div>
+            <div>
+              <h3 class="card__heading">Financial Impact</h3>
+              <p>Tell us if you faced any financial loss.</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="loss">Did you suffer a financial loss?</label>
+            <select class="select" id="loss">
+              <option value="">Select option</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="amount">Estimated amount lost</label>
+            <input class="input" id="amount" type="number" min="0" placeholder="&#8377; Enter amount">
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card__header">
+            <div class="icon-box icon-box--accent"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+            <div>
+              <h3 class="card__heading">Evidence Upload</h3>
+              <p>Upload screenshots, receipts or documents.</p>
+            </div>
+          </div>
+
+          <label class="upload-box" for="evidence">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <strong>Drag &amp; Drop files here</strong>
+            <span>or click to browse</span>
+            <span class="field__hint">Supports JPG, PNG, PDF</span>
+            <input class="visually-hidden" id="evidence" type="file" multiple accept=".jpg,.jpeg,.png,.pdf">
+          </label>
+          <ul id="evidence-list" class="checklist"></ul>
+          <p id="evidence-message" class="field__hint" role="status"></p>
+        </section>
+
+        <section class="card">
+          <div class="card__header">
+            <div class="icon-box icon-box--success"><i class="fa-regular fa-message"></i></div>
+            <div>
+              <h3 class="card__heading">Previous Actions Taken</h3>
+              <p>Help us understand the steps you've already taken.</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="contacted">Have you contacted the platform?</label>
+            <select class="select" id="contacted">
+              <option value="">Select option</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="response">Any response received?</label>
+            <textarea class="textarea" id="response" placeholder="Describe any response..."></textarea>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card__header">
+            <div class="icon-box icon-box--warning"><i class="fa-regular fa-note-sticky"></i></div>
+            <div>
+              <h3 class="card__heading">Additional Notes</h3>
+              <p>Add any other information.</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="visually-hidden" for="notes">Additional notes</label>
+            <textarea class="textarea" id="notes" placeholder="Write your notes here..."></textarea>
+          </div>
+        </section>
+
+        <p id="additional-message" class="field__hint" role="status"></p>
+
+        <div class="action-bar">
+          <a class="btn btn--ghost" href="step-1-details.html">
+            <i class="fa-solid fa-arrow-left"></i> Back
+          </a>
+          <button class="btn btn--primary" type="submit" id="continue-btn">
+            Continue <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+      </form>
+
+      <aside class="split__aside">
+        <section class="card card--tint-accent">
+          <h4 class="card__heading">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Why we ask this
+          </h4>
+          <ul class="checklist checklist--accent">
+            <li>Improves report accuracy</li>
+            <li>Provides better recovery guidance</li>
+            <li>Helps authorities investigate faster</li>
+            <li>Strengthens evidence collection</li>
+          </ul>
+        </section>
+
+        <section class="card card--tint-success">
+          <h4 class="card__heading">
+            <i class="fa-solid fa-lock"></i> Your privacy matters
+          </h4>
+          <p>All information is encrypted and never shared without your consent.</p>
+          <p class="meta"><i class="fa-solid fa-shield-halved"></i> 256-bit SSL encryption</p>
+        </section>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <strong>Aiges</strong>
+        <p class="site-footer__tagline">Safer people. Safer web.</p>
+      </div>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="../welcome.html">About</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="../guidance.html">Help</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/header-auth.js"></script>
+  <script src="../assets/js/report-common.js"></script>
+  <script src="../assets/js/report-step2.js"></script>
+</body>
+</html>

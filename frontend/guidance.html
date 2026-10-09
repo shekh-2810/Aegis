@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aiges — Guidance</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/guidance.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark"><i class="fa-solid fa-shield-halved"></i></span>
+        Aiges
+      </a>
+
+      <a class="nav-toggle" href="#primary-nav" aria-label="Open navigation">
+        <i class="fa-solid fa-bars"></i>
+      </a>
+
+      <nav class="site-nav" id="primary-nav" aria-label="Primary">
+        <a class="site-nav__link" href="index.html">Home</a>
+        <a class="site-nav__link" href="report/step-1-details.html">Report Incident</a>
+        <a class="site-nav__link is-active" href="guidance.html">Guidance</a>
+        <a class="site-nav__link" href="track-status.html">Track Status</a>
+      </nav>
+
+      <div class="site-header__actions" id="header-actions">
+        <a class="btn btn--primary" href="login.html">
+          <i class="fa-regular fa-user"></i> Log in
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="container guidance-hero">
+      <div>
+        <span class="tag">GUIDANCE</span>
+        <h1 class="guidance-hero__title">Simple guidance for a safer you</h1>
+        <p class="guidance-hero__text">
+          Find clear, easy-to-follow advice to protect yourself, recover from
+          incidents, and stay informed.
+        </p>
+      </div>
+
+      <div class="guidance-hero__aside">
+        <div class="guidance-hero__mark"><i class="fa-solid fa-shield-halved"></i></div>
+        <p class="guidance-hero__note">Learn.<br>Stay safe.<br>Be in control.</p>
+      </div>
+    </section>
+
+    <section class="container guidance-grid">
+
+      <a class="guidance-card" href="#stay-safe">
+        <div class="icon-box icon-box--danger"><i class="fa-solid fa-shield-heart"></i></div>
+        <h3>Stay Safe Online</h3>
+        <p>Learn practical tips to avoid scams, phishing and online threats.</p>
+        <span class="guidance-card__more">Read more <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a class="guidance-card" href="#secure-accounts">
+        <div class="icon-box icon-box--brand"><i class="fa-regular fa-user"></i></div>
+        <h3>Secure Your Accounts</h3>
+        <p>Enable 2FA, improve passwords and protect your digital identity.</p>
+        <span class="guidance-card__more">Read more <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a class="guidance-card" href="#recognize-scams">
+        <div class="icon-box icon-box--success"><i class="fa-solid fa-laptop"></i></div>
+        <h3>Recognize Common Scams</h3>
+        <p>Understand warning signs and learn how scams work.</p>
+        <span class="guidance-card__more">Read more <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a class="guidance-card" href="#recover">
+        <div class="icon-box icon-box--accent"><i class="fa-solid fa-wrench"></i></div>
+        <h3>Recover After an Incident</h3>
+        <p>Follow guided recovery steps after a scam or cyber attack.</p>
+        <span class="guidance-card__more">Read more <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a class="guidance-card" href="#basics">
+        <div class="icon-box icon-box--warning"><i class="fa-solid fa-book-open"></i></div>
+        <h3>Learn the Basics</h3>
+        <p>Understand key cybersecurity concepts in simple language.</p>
+        <span class="guidance-card__more">Read more <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a class="guidance-card" href="#get-help">
+        <div class="icon-box icon-box--accent"><i class="fa-solid fa-circle-info"></i></div>
+        <h3>Get Help</h3>
+        <p>Find trusted resources and contact authorities when needed.</p>
+        <span class="guidance-card__more">Read more <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+    </section>
+
+    <section class="container guidance-detail" id="stay-safe">
+      <h2><i class="fa-solid fa-shield-heart"></i> Stay Safe Online</h2>
+      <ul>
+        <li>Check for HTTPS and a correctly spelled domain name before entering any details.</li>
+        <li>Never enter an OTP, password, or card PIN on a page you reached via an unsolicited link or message.</li>
+        <li>Use the "Check a link" scanner on the homepage before opening unfamiliar links.</li>
+        <li>Be suspicious of urgency — "act now or lose your account" is a classic pressure tactic.</li>
+      </ul>
+      <a class="guidance-detail__top" href="#">Back to top <i class="fa-solid fa-arrow-up"></i></a>
+    </section>
+
+    <section class="container guidance-detail" id="secure-accounts">
+      <h2><i class="fa-regular fa-user"></i> Secure Your Accounts</h2>
+      <ul>
+        <li>Turn on two-factor authentication (2FA) on email, banking, and social accounts.</li>
+        <li>Use a unique password per account; a password manager makes this practical.</li>
+        <li>Review connected apps/devices periodically and remove ones you don't recognize.</li>
+        <li>Set up account-recovery details (backup email/phone) so you can regain access quickly if compromised.</li>
+      </ul>
+      <a class="guidance-detail__top" href="#">Back to top <i class="fa-solid fa-arrow-up"></i></a>
+    </section>
+
+    <section class="container guidance-detail" id="recognize-scams">
+      <h2><i class="fa-solid fa-laptop"></i> Recognize Common Scams</h2>
+      <ul>
+        <li><strong>Phishing:</strong> emails/SMS impersonating a bank or brand, linking to a lookalike login page.</li>
+        <li><strong>UPI/payment scams:</strong> fake "collect" requests or refund calls that ask you to enter your UPI PIN.</li>
+        <li><strong>Job/lottery scams:</strong> upfront "processing fees" for a job, prize, or loan that doesn't exist.</li>
+        <li><strong>Typosquatting:</strong> domains that look almost identical to a real brand (e.g. an extra letter or different TLD).</li>
+      </ul>
+      <a class="guidance-detail__top" href="#">Back to top <i class="fa-solid fa-arrow-up"></i></a>
+    </section>
+
+    <section class="container guidance-detail" id="recover">
+      <h2><i class="fa-solid fa-wrench"></i> Recover After an Incident</h2>
+      <ol>
+        <li>Change the passwords of any account you think was compromised, starting with email.</li>
+        <li>If money was lost, contact your bank/payment provider immediately — many have short windows to reverse fraud.</li>
+        <li>File a report using the <a href="report/step-1-details.html">Report Incident</a> flow to get a tracking code and a recovery guide.</li>
+        <li>Keep evidence (screenshots, messages, transaction IDs) — you can attach these to your report.</li>
+      </ol>
+      <a class="guidance-detail__top" href="#">Back to top <i class="fa-solid fa-arrow-up"></i></a>
+    </section>
+
+    <section class="container guidance-detail" id="basics">
+      <h2><i class="fa-solid fa-book-open"></i> Learn the Basics</h2>
+      <ul>
+        <li><strong>Phishing:</strong> tricking someone into revealing credentials via a fake message or site.</li>
+        <li><strong>Malware:</strong> software designed to damage, disrupt, or gain unauthorized access to a device.</li>
+        <li><strong>Two-factor authentication (2FA):</strong> a second proof of identity beyond your password.</li>
+        <li><strong>Risk score:</strong> how Aiges' scanner summarizes how many warning signs a link shows — higher means riskier.</li>
+      </ul>
+      <a class="guidance-detail__top" href="#">Back to top <i class="fa-solid fa-arrow-up"></i></a>
+    </section>
+
+    <section class="container guidance-detail" id="get-help">
+      <h2><i class="fa-solid fa-circle-info"></i> Get Help</h2>
+      <ul>
+        <li>India: report cybercrime at <strong>cybercrime.gov.in</strong> or call the national helpline <strong>1930</strong>.</li>
+        <li>Use <a href="track-status.html">Track Status</a> to follow up on a report you already filed with Aiges.</li>
+        <li>Contact your bank's official fraud helpline (found on the back of your card or their official site) — never a number from a message.</li>
+      </ul>
+      <a class="guidance-detail__top" href="#">Back to top <i class="fa-solid fa-arrow-up"></i></a>
+    </section>
+
+    <section class="container">
+      <div class="ask-ai">
+        <h2>Still have questions?</h2>
+        <p>Ask our AI assistant for personalized guidance.</p>
+        <a class="btn btn--lg" href="report/step-1-details.html">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Ask Aiges AI
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <strong>Aiges</strong>
+        <p class="site-footer__tagline">Safer people. Safer web.</p>
+      </div>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="welcome.html">About</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="guidance.html">Help</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/header-auth.js"></script>
+</body>
+</html>

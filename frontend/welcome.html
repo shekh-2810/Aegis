@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aiges — Safer People, Safer Web</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/welcome.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark"><i class="fa-solid fa-shield-halved"></i></span>
+        Aiges
+      </a>
+
+      <a class="nav-toggle" href="#primary-nav" aria-label="Open navigation">
+        <i class="fa-solid fa-bars"></i>
+      </a>
+
+      <nav class="site-nav" id="primary-nav" aria-label="Primary">
+        <a class="site-nav__link" href="index.html">Home</a>
+        <a class="site-nav__link" href="report/step-1-details.html">Report Incident</a>
+        <a class="site-nav__link" href="guidance.html">Guidance</a>
+        <a class="site-nav__link" href="track-status.html">Track Status</a>
+      </nav>
+
+      <div class="site-header__actions" id="header-actions">
+        <a class="btn btn--primary" href="login.html">
+          <i class="fa-regular fa-user"></i> Log in
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="container hero">
+      <div>
+        <span class="badge"><i class="fa-solid fa-shield-halved"></i> Smart protection for a safer you</span>
+        <h1 class="hero__title">Stay ahead of scams, phishing, and fraud</h1>
+        <p class="hero__text">
+          Real-time protection while you browse, and a place to report incidents
+          and get step-by-step recovery help.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" href="report/step-1-details.html">Report an Incident</a>
+          <a class="btn btn--outline btn--lg" href="#">Get the Extension</a>
+        </div>
+      </div>
+
+      <div class="illustration">
+        <div class="illustration__shield"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="illustration__alerts">
+          <div class="alert-chip alert-chip--danger">
+            <i class="fa-solid fa-ban"></i> Website blocked
+          </div>
+          <div class="alert-chip alert-chip--success">
+            <i class="fa-solid fa-circle-check"></i> You're protected
+          </div>
+          <div class="alert-chip alert-chip--warning">
+            <i class="fa-solid fa-triangle-exclamation"></i> Possible phishing
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container features">
+      <article class="feature">
+        <div class="icon-box icon-box--brand"><i class="fa-regular fa-eye"></i></div>
+        <h3>Detect</h3>
+        <p>Extension flags risky sites as you browse.</p>
+      </article>
+      <article class="feature">
+        <div class="icon-box icon-box--danger"><i class="fa-solid fa-flag"></i></div>
+        <h3>Report</h3>
+        <p>Submit incidents in a few clicks.</p>
+      </article>
+      <article class="feature">
+        <div class="icon-box icon-box--success"><i class="fa-solid fa-life-ring"></i></div>
+        <h3>Recover</h3>
+        <p>Guided steps to secure your accounts.</p>
+      </article>
+    </section>
+
+    <section class="container">
+      <div class="ai-band">
+        <h2>Generate report with AI</h2>
+        <p>Answer a few questions and let AI create a detailed report.</p>
+        <a class="btn btn--lg" href="report/step-1-details.html">
+          Generate report with AI <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <section class="container stats">
+      <div class="stat">
+        <p class="stat__value">98%</p>
+        <p class="stat__label">Threats detected</p>
+      </div>
+      <div class="stat">
+        <p class="stat__value">24/7</p>
+        <p class="stat__label">Real-time protection</p>
+      </div>
+      <div class="stat">
+        <p class="stat__value">Trusted</p>
+        <p class="stat__label">Users worldwide</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <strong>Aiges</strong>
+        <p class="site-footer__tagline">Safer people. Safer web.</p>
+      </div>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="welcome.html">About</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="guidance.html">Help</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/header-auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aiges — AI Report Generation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages/report.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html">
+        <span class="brand__mark"><i class="fa-solid fa-shield-halved"></i></span>
+        Aiges
+      </a>
+
+      <a class="nav-toggle" href="#primary-nav" aria-label="Open navigation">
+        <i class="fa-solid fa-bars"></i>
+      </a>
+
+      <nav class="site-nav" id="primary-nav" aria-label="Primary">
+        <a class="site-nav__link" href="../index.html">Home</a>
+        <a class="site-nav__link is-active" href="step-1-details.html">Report Incident</a>
+        <a class="site-nav__link" href="../guidance.html">Guidance</a>
+        <a class="site-nav__link" href="../track-status.html">Track Status</a>
+      </nav>
+
+      <div class="site-header__actions" id="header-actions">
+        <a class="btn btn--primary" href="../login.html">
+          <i class="fa-regular fa-user"></i> Log in
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page">
+
+    <a class="page__back" href="../index.html">
+      <i class="fa-solid fa-arrow-left"></i> Back to home
+    </a>
+
+    <h1 class="page__title">AI-Powered Report Generation</h1>
+    <p class="page__subtitle">
+      Review your information, let our AI generate a detailed report, and make
+      any final edits.
+    </p>
+
+    <ol class="stepper">
+      <li class="stepper__step is-done">
+        <span class="stepper__marker"><i class="fa-solid fa-check"></i></span>
+        <span class="stepper__label">Incident details</span>
+      </li>
+      <li class="stepper__step is-done">
+        <span class="stepper__marker"><i class="fa-solid fa-check"></i></span>
+        <span class="stepper__label">Additional information</span>
+      </li>
+      <li class="stepper__step is-active">
+        <span class="stepper__marker">3</span>
+        <span class="stepper__label">Review &amp; AI generate</span>
+      </li>
+      <li class="stepper__step">
+        <span class="stepper__marker">4</span>
+        <span class="stepper__label">Download &amp; submit</span>
+      </li>
+    </ol>
+
+    <div class="split">
+
+      <div>
+
+        <section class="card">
+          <div class="card__header">
+            <div class="icon-box icon-box--brand"><i class="fa-regular fa-file-lines"></i></div>
+            <div>
+              <h3 class="card__heading">Your Information Summary</h3>
+              <p>Here's what you've provided.</p>
+            </div>
+            <a class="btn btn--ghost" href="step-1-details.html">
+              <i class="fa-solid fa-pen"></i> Edit Information
+            </a>
+          </div>
+
+          <div class="info-grid">
+            <div>
+              <div class="info-item">
+                <i class="fa-regular fa-user"></i>
+                <div>
+                  <p class="info-item__label">Incident type</p>
+                  <p class="info-item__value" id="summary-type">—</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-regular fa-calendar"></i>
+                <div>
+                  <p class="info-item__label">Date</p>
+                  <p class="info-item__value" id="summary-date">—</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-desktop"></i>
+                <div>
+                  <p class="info-item__label">Platform</p>
+                  <p class="info-item__value" id="summary-platform">—</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="info-item">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <div>
+                  <p class="info-item__label">Impact</p>
+                  <p class="info-item__value" id="summary-impact">—</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-regular fa-file"></i>
+                <div>
+                  <p class="info-item__label">What happened</p>
+                  <p class="info-item__value" id="summary-description">—</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-list"></i>
+                <div>
+                  <p class="info-item__label">Actions Taken</p>
+                  <p class="info-item__value" id="summary-actions">—</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="info-item">
+                <i class="fa-solid fa-paperclip"></i>
+                <div>
+                  <p class="info-item__label">Evidence</p>
+                  <p class="info-item__value" id="summary-evidence">—</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                  <p class="info-item__label">Additional Context</p>
+                  <p class="info-item__value" id="summary-context">—</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card__header">
+            <div class="icon-box icon-box--accent"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <div>
+              <h3 class="card__heading">Generate your report with AI</h3>
+              <p>Our AI will create a professional report.</p>
+            </div>
+          </div>
+
+          <div class="report-options" id="report-options">
+            <div class="option is-selected" data-report-type="standard">
+              <i class="fa-regular fa-file-lines"></i>
+              <h4>Standard Report</h4>
+              <p>Clear and concise</p>
+            </div>
+            <div class="option" data-report-type="detailed">
+              <i class="fa-solid fa-shield-halved"></i>
+              <h4>Detailed Report</h4>
+              <p>Technical analysis</p>
+            </div>
+            <div class="option" data-report-type="legal">
+              <i class="fa-solid fa-scale-balanced"></i>
+              <h4>Legal Support</h4>
+              <p>For authorities</p>
+            </div>
+            <div class="option" data-report-type="multilingual">
+              <i class="fa-solid fa-globe"></i>
+              <h4>Multilingual</h4>
+              <p>Choose language</p>
+            </div>
+          </div>
+
+          <p class="callout callout--accent">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <span>AI will also include safety recommendations and next steps.</span>
+          </p>
+
+          <p id="generate-message" class="field__hint" role="status"></p>
+        </section>
+
+        <div class="action-bar">
+          <a class="btn btn--ghost" href="step-2-additional.html">
+            <i class="fa-solid fa-arrow-left"></i> Back
+          </a>
+          <button class="btn btn--primary" type="button" id="continue-btn">
+            Continue <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <p class="footer-note">
+          Your safety is our mission. Aiges never stores personal data without
+          your consent.
+        </p>
+
+      </div>
+
+      <aside class="split__aside">
+
+        <div class="ai-preview">
+          <h4>AI Report</h4>
+          <div class="skeleton-line skeleton-line--short"></div>
+          <div class="skeleton-line"></div>
+          <div class="skeleton-line"></div>
+          <div class="skeleton-line"></div>
+          <div class="skeleton-line skeleton-line--short"></div>
+        </div>
+
+        <section class="card">
+          <h3 class="card__heading">What the AI will include</h3>
+          <ul class="checklist">
+            <li>Summary of incident</li>
+            <li>Timeline of events</li>
+            <li>Technical indicators</li>
+            <li>Impact assessment</li>
+            <li>Recommended next steps</li>
+            <li>Safety tips</li>
+          </ul>
+        </section>
+
+        <section class="card card--tint-success">
+          <h4 class="card__heading">
+            <i class="fa-solid fa-lock"></i> Your data stays private
+          </h4>
+          <p>
+            We use encrypted AI processing and never share your personal
+            information.
+          </p>
+        </section>
+
+      </aside>
+
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <strong>Aiges</strong>
+        <p class="site-footer__tagline">Safer people. Safer web.</p>
+      </div>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="../welcome.html">About</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="../guidance.html">Help</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/header-auth.js"></script>
+  <script src="../assets/js/report-common.js"></script>
+  <script src="../assets/js/report-step3.js"></script>
+</body>
+</html>

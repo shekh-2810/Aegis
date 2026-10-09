@@ -1,0 +1,283 @@
+/* ==========================================================================
+   Layout — container, site header, site footer
+   These three blocks are shared verbatim by every page. Previously each page
+   re-declared its own navbar with different markup, classes and heights.
+   Depends on: tokens.css, base.css
+   ========================================================================== */
+
+/* --- Container --------------------------------------------------------- */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+.container--wide {
+  max-width: var(--container-wide);
+}
+
+/* --- Site header ------------------------------------------------------- */
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.site-header__inner {
+  min-height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+/* Brand */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--text);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.brand:hover {
+  color: var(--text);
+}
+
+.brand__mark {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--brand);
+  color: var(--text-invert);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-md);
+  flex-shrink: 0;
+}
+
+/* Header search — optional slot, used on the news index only */
+
+.site-search {
+  flex: 1;
+  max-width: 420px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-inline: var(--space-4);
+  color: var(--text-muted);
+}
+
+.site-search input {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: none;
+}
+
+/* Primary navigation */
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  margin-left: auto;
+}
+
+.site-nav__link {
+  color: var(--text);
+  font-size: var(--text-base);
+  font-weight: 500;
+  padding-block: calc((var(--nav-height) - 1.5rem) / 2);
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+
+.site-nav__link:hover {
+  color: var(--brand);
+}
+
+.site-nav__link.is-active {
+  color: var(--brand);
+  border-bottom-color: var(--brand);
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-shrink: 0;
+}
+
+/* Mobile nav toggle (CSS-only, no JS dependency) */
+
+.nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text);
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Page shell -------------------------------------------------------- */
+
+.page {
+  padding-block: var(--space-8) var(--space-16);
+}
+
+.page__back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--text-base);
+}
+
+.page__back:hover {
+  color: var(--brand);
+}
+
+.page__title {
+  margin-top: var(--space-5);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+}
+
+.page__subtitle {
+  margin-top: var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--text-md);
+  max-width: 68ch;
+}
+
+/* Two-column main/aside grid used by the report flow */
+
+.split {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.split__aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* --- Site footer ------------------------------------------------------- */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  margin-top: var(--space-16);
+}
+
+.site-footer__inner {
+  padding-block: var(--space-6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.site-footer__tagline {
+  margin-top: var(--space-1);
+  color: var(--text-muted);
+  font-size: var(--text-base);
+}
+
+.site-footer__links {
+  display: flex;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.site-footer__links a {
+  color: var(--text-muted);
+}
+
+.site-footer__links a:hover {
+  color: var(--brand);
+}
+
+/* --- Responsive -------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .site-search {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-2) var(--space-6) var(--space-4);
+  }
+
+  /* :target lets the menu open without JavaScript */
+  .site-nav:target {
+    display: flex;
+  }
+
+  .site-nav__link {
+    padding-block: var(--space-3);
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  .site-nav__link.is-active {
+    border-bottom-color: var(--border-soft);
+  }
+
+  .site-header__actions {
+    margin-left: var(--space-2);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-inline: var(--space-4);
+  }
+
+  .page__title {
+    font-size: var(--text-xl);
+  }
+
+  .site-footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

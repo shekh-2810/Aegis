@@ -1,0 +1,193 @@
+/* ==========================================================================
+   Page: login.html
+   Depends on: tokens.css, base.css, layout.css, components.css
+   ========================================================================== */
+
+.auth {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+  padding-block: var(--space-12) var(--space-16);
+}
+
+/* --- Left: marketing panel ---------------------------------------------- */
+
+.auth__intro .tag {
+  letter-spacing: .08em;
+}
+
+.auth__title {
+  margin-top: var(--space-5);
+  font-size: var(--text-2xl);
+}
+
+.auth__text {
+  margin-top: var(--space-4);
+  color: var(--text-muted);
+  font-size: var(--text-md);
+  max-width: 54ch;
+}
+
+.auth__features {
+  margin-top: var(--space-10);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+.auth-feature {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.auth-feature h4 {
+  font-size: var(--text-base);
+}
+
+.auth-feature p {
+  margin-top: var(--space-1);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+.quote {
+  margin-top: var(--space-10);
+  padding: var(--space-6);
+  border-left: 3px solid var(--brand);
+  background: var(--brand-tint);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.quote p {
+  font-size: var(--text-md);
+  font-weight: 600;
+}
+
+.quote cite {
+  display: block;
+  margin-top: var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  font-style: normal;
+}
+
+/* --- Right: login card -------------------------------------------------- */
+
+.auth-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-10);
+}
+
+.auth-card h2 {
+  font-size: var(--text-lg);
+}
+
+.auth-card__lede {
+  margin-top: var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--text-base);
+}
+
+.auth-card form {
+  margin-top: var(--space-6);
+}
+
+.password-field {
+  position: relative;
+}
+
+.password-field .input {
+  padding-right: var(--space-10);
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: var(--space-3);
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  padding: var(--space-1);
+}
+
+.forgot {
+  display: block;
+  margin-top: var(--space-3);
+  text-align: right;
+  font-size: var(--text-sm);
+}
+
+.auth-card .btn--block {
+  margin-top: var(--space-6);
+}
+
+/* Divider */
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-block: var(--space-6);
+  color: var(--text-soft);
+  font-size: var(--text-sm);
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.auth-card__switch {
+  margin-top: var(--space-6);
+  text-align: center;
+  font-size: var(--text-base);
+  color: var(--text-muted);
+}
+
+.security-note {
+  margin-top: var(--space-6);
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--success-tint);
+  border: 1px solid var(--success-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.security-note i {
+  color: var(--success);
+  margin-top: 3px;
+}
+
+/* --- Responsive --------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .auth {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+}
+
+@media (max-width: 640px) {
+  .auth__features {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-card {
+    padding: var(--space-6);
+  }
+}

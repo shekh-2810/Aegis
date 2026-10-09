@@ -1,0 +1,93 @@
+/* ==========================================================================
+   Design tokens
+   Single source of truth for colour, type, spacing, radius and elevation.
+   The project previously used three different brand blues (#2563eb, #1565ff,
+   #2563ff); all three are unified here as --brand.
+   ========================================================================== */
+
+:root {
+
+  /* --- Brand ---------------------------------------------------------- */
+  --brand:            #2563eb;
+  --brand-dark:       #1d4ed8;
+  --brand-darker:     #00153d;
+  --brand-tint:       #eef4ff;
+  --brand-tint-soft:  #dbeafe;
+
+  --accent:           #7c3aed;
+  --accent-tint:      #f4ecff;
+
+  /* --- Status --------------------------------------------------------- */
+  --danger:           #ef4444;
+  --danger-tint:      #fee2e2;
+  --danger-border:    #fed7d7;
+  --success:          #059669;
+  --success-tint:     #ecfdf5;
+  --success-border:   #b6f1d4;
+  --warning:          #f59e0b;
+  --warning-tint:     #fff6df;
+
+  /* --- Neutrals ------------------------------------------------------- */
+  --bg:               #f7f9fc;
+  --bg-alt:           #f8fafc;
+  --surface:          #ffffff;
+  --surface-muted:    #f1f5f9;
+
+  --text:             #0f172a;
+  --text-muted:       #64748b;
+  --text-soft:        #94a3b8;
+  --text-invert:      #ffffff;
+
+  --border:           #e2e8f0;
+  --border-soft:      #edf2f7;
+  --border-strong:    #cbd5e1;
+
+  /* --- Typography ----------------------------------------------------- */
+  --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --text-xs:    0.75rem;   /* 12px */
+  --text-sm:    0.8125rem; /* 13px */
+  --text-base:  0.9375rem; /* 15px */
+  --text-md:    1.125rem;  /* 18px */
+  --text-lg:    1.5rem;    /* 24px */
+  --text-xl:    2rem;      /* 32px */
+  --text-2xl:   2.625rem;  /* 42px */
+  --text-3xl:   3.375rem;  /* 54px */
+
+  --leading-tight: 1.15;
+  --leading-normal: 1.6;
+  --leading-loose: 1.8;
+
+  /* --- Spacing scale -------------------------------------------------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* --- Radius --------------------------------------------------------- */
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+  --radius-xl:  20px;
+  --radius-2xl: 25px;
+  --radius-pill: 999px;
+
+  /* --- Elevation ------------------------------------------------------ */
+  --shadow-sm: 0 4px 15px rgba(0, 0, 0, .05);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, .08);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, .10);
+
+  /* --- Layout --------------------------------------------------------- */
+  --container-max: 1200px;
+  --container-wide: 1400px;
+  --nav-height: 72px;
+
+  /* --- Motion --------------------------------------------------------- */
+  --transition: 200ms ease;
+}

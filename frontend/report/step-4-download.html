@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aiges — Download &amp; Submit</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages/report.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html">
+        <span class="brand__mark"><i class="fa-solid fa-shield-halved"></i></span>
+        Aiges
+      </a>
+
+      <a class="nav-toggle" href="#primary-nav" aria-label="Open navigation">
+        <i class="fa-solid fa-bars"></i>
+      </a>
+
+      <nav class="site-nav" id="primary-nav" aria-label="Primary">
+        <a class="site-nav__link" href="../index.html">Home</a>
+        <a class="site-nav__link is-active" href="step-1-details.html">Report Incident</a>
+        <a class="site-nav__link" href="../guidance.html">Guidance</a>
+        <a class="site-nav__link" href="../track-status.html">Track Status</a>
+      </nav>
+
+      <div class="site-header__actions" id="header-actions">
+        <a class="btn btn--primary" href="../login.html">
+          <i class="fa-regular fa-user"></i> Log in
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page">
+
+    <a class="page__back" href="../index.html">
+      <i class="fa-solid fa-arrow-left"></i> Back to home
+    </a>
+
+    <h1 class="page__title">AI-Powered Report Generation</h1>
+    <p class="page__subtitle">
+      Your report is ready! Review it, download, and take the next steps.
+    </p>
+
+    <ol class="stepper">
+      <li class="stepper__step is-done">
+        <span class="stepper__marker"><i class="fa-solid fa-check"></i></span>
+        <span class="stepper__label">Incident details</span>
+      </li>
+      <li class="stepper__step is-done">
+        <span class="stepper__marker"><i class="fa-solid fa-check"></i></span>
+        <span class="stepper__label">Additional information</span>
+      </li>
+      <li class="stepper__step is-done">
+        <span class="stepper__marker"><i class="fa-solid fa-check"></i></span>
+        <span class="stepper__label">Review &amp; AI generate</span>
+      </li>
+      <li class="stepper__step is-active">
+        <span class="stepper__marker">4</span>
+        <span class="stepper__label">Download &amp; Submit</span>
+      </li>
+    </ol>
+
+    <section class="card">
+      <div class="card__header">
+        <div class="icon-box icon-box--brand"><i class="fa-solid fa-file-lines"></i></div>
+        <div>
+          <h3 class="card__heading">Your AI-Generated Report</h3>
+          <p>A clear, structured and professional report.</p>
+        </div>
+        <a class="btn btn--ghost" href="step-3-generate.html">
+          <i class="fa-solid fa-pen"></i> Edit Report
+        </a>
+      </div>
+
+      <div class="report-body">
+
+        <nav class="report-toc" aria-label="Report sections">
+          <a class="report-toc__item is-active" href="#"><i class="fa-regular fa-file"></i> Cover Page</a>
+          <a class="report-toc__item" href="#"><i class="fa-regular fa-file-lines"></i> Executive Summary</a>
+          <a class="report-toc__item" href="#"><i class="fa-regular fa-clock"></i> Timeline</a>
+          <a class="report-toc__item" href="#"><i class="fa-solid fa-network-wired"></i> Technical Details</a>
+          <a class="report-toc__item" href="#"><i class="fa-solid fa-chart-line"></i> Impact Assessment</a>
+          <a class="report-toc__item" href="#"><i class="fa-solid fa-paperclip"></i> Evidence</a>
+          <a class="report-toc__item" href="#"><i class="fa-solid fa-shield-halved"></i> Recommendations</a>
+          <a class="report-toc__item" href="#"><i class="fa-solid fa-list-check"></i> Next Steps</a>
+        </nav>
+
+        <div class="report-preview">
+
+          <article class="paper">
+            <div class="paper__top">
+              <p class="paper__logo">
+                <i class="fa-solid fa-shield-halved"></i> Aiges
+              </p>
+              <p class="paper__ref" id="paper-ref">
+                Report ID: —<br>
+                Generated: —
+              </p>
+            </div>
+
+            <h2 class="paper__title">Cyber Incident Report</h2>
+            <p class="paper__generated">Generated with Aiges AI</p>
+
+            <div class="paper__facts">
+              <div>
+                <h4>Incident Type</h4>
+                <p id="paper-type">—</p>
+              </div>
+              <div>
+                <h4>Date of Incident</h4>
+                <p id="paper-date">—</p>
+              </div>
+              <div>
+                <h4>Platform</h4>
+                <p id="paper-platform">—</p>
+              </div>
+              <div>
+                <h4>Generated On</h4>
+                <p id="paper-generated-on">—</p>
+              </div>
+            </div>
+
+            <p class="paper__summary" id="paper-summary"></p>
+
+            <p class="paper__footer">
+              This report was generated using Aiges AI based on the information
+              provided by the user.<br>
+              It may be shared with relevant authorities.
+            </p>
+          </article>
+
+          <div class="viewer-controls">
+            <div class="viewer-controls__group">
+              <button type="button" aria-label="Previous page">
+                <i class="fa-solid fa-angle-left"></i>
+              </button>
+              <span>1 / 8</span>
+              <button type="button" aria-label="Next page">
+                <i class="fa-solid fa-angle-right"></i>
+              </button>
+            </div>
+            <div class="viewer-controls__group">
+              <button type="button" aria-label="Zoom out">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <span>100%</span>
+              <button type="button" aria-label="Zoom in">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+              <button type="button" aria-label="Full screen">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="card">
+      <h3 class="card__heading">What would you like to do next?</h3>
+
+      <a class="action-item" href="#" id="download-pdf-btn">
+        <span class="action-item__label">
+          <i class="fa-solid fa-download"></i> Download Report (PDF)
+        </span>
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
+      <a class="action-item" href="#" id="share-email-btn">
+        <span class="action-item__label">
+          <i class="fa-regular fa-envelope"></i> Share via Email
+        </span>
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
+      <a class="action-item" href="#" id="submit-authorities-btn">
+        <span class="action-item__label">
+          <i class="fa-solid fa-building-columns"></i> Submit to Authorities
+        </span>
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
+      <a class="action-item" href="#" id="shareable-link-btn">
+        <span class="action-item__label">
+          <i class="fa-solid fa-link"></i> Get Shareable Link
+        </span>
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
+    </section>
+
+    <p id="action-message" class="field__hint" role="status"></p>
+
+    <div class="promo promo--accent">
+      <div>
+        <h4>Need Guidance?</h4>
+        <p>Get personalized next steps.</p>
+      </div>
+      <a class="btn" href="../guidance.html">View Guidance</a>
+    </div>
+
+    <div class="promo promo--success">
+      <div>
+        <h4>Track Your Report</h4>
+        <p>Save and monitor actions.</p>
+      </div>
+      <a class="btn" href="../login.html">Create Account</a>
+    </div>
+
+    <div class="promo promo--brand">
+      <div>
+        <h4>Help us improve</h4>
+        <p>Share feedback.</p>
+      </div>
+      <a class="btn" href="#">Give Feedback</a>
+    </div>
+
+    <div class="action-bar">
+      <a class="btn btn--ghost" href="step-3-generate.html">
+        <i class="fa-solid fa-arrow-left"></i> Back
+      </a>
+      <a class="btn btn--primary" href="../index.html">
+        Finish <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <p class="footer-note">
+      Your safety is our mission. Aiges never stores your personal data without
+      your consent.
+    </p>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <strong>Aiges</strong>
+        <p class="site-footer__tagline">Safer people. Safer web.</p>
+      </div>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="../welcome.html">About</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="../guidance.html">Help</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/header-auth.js"></script>
+  <script src="../assets/js/report-common.js"></script>
+  <script src="../assets/js/report-step4.js"></script>
+</body>
+</html>

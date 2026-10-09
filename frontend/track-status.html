@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aiges — Track Status</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/report.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark"><i class="fa-solid fa-shield-halved"></i></span>
+        Aiges
+      </a>
+
+      <a class="nav-toggle" href="#primary-nav" aria-label="Open navigation">
+        <i class="fa-solid fa-bars"></i>
+      </a>
+
+      <nav class="site-nav" id="primary-nav" aria-label="Primary">
+        <a class="site-nav__link" href="index.html">Home</a>
+        <a class="site-nav__link" href="report/step-1-details.html">Report Incident</a>
+        <a class="site-nav__link" href="guidance.html">Guidance</a>
+        <a class="site-nav__link is-active" href="track-status.html">Track Status</a>
+      </nav>
+
+      <div class="site-header__actions" id="header-actions">
+        <a class="btn btn--primary" href="login.html">
+          <i class="fa-regular fa-user"></i> Log in
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page">
+
+    <a class="page__back" href="index.html">
+      <i class="fa-solid fa-arrow-left"></i> Back to home
+    </a>
+
+    <h1 class="page__title">Track Your Report</h1>
+    <p class="page__subtitle">
+      Enter your tracking code to check the status of your incident report.
+    </p>
+
+    <div class="split">
+
+      <section class="card">
+        <h3 class="card__heading">Look up a report</h3>
+
+        <form id="track-form">
+          <div class="field">
+            <label class="field__label" for="tracking-code">Tracking code</label>
+            <p class="field__hint">You received this code when you started your report (e.g. AIG-XXXXXXXX).</p>
+            <input class="input" id="tracking-code" type="text" placeholder="AIG-XXXXXXXX" required>
+          </div>
+
+          <div class="action-bar">
+            <button class="btn btn--primary" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i> Track report
+            </button>
+          </div>
+        </form>
+
+        <p id="track-message" class="field__hint" role="status"></p>
+
+        <div id="track-result" hidden>
+          <div class="info-grid">
+            <div>
+              <div class="info-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <div>
+                  <p class="info-item__label">Status</p>
+                  <p class="info-item__value" id="result-status">—</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-regular fa-user"></i>
+                <div>
+                  <p class="info-item__label">Incident type</p>
+                  <p class="info-item__value" id="result-type">—</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="info-item">
+                <i class="fa-regular fa-calendar"></i>
+                <div>
+                  <p class="info-item__label">Submitted</p>
+                  <p class="info-item__value" id="result-created">—</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-desktop"></i>
+                <div>
+                  <p class="info-item__label">Platform</p>
+                  <p class="info-item__value" id="result-location">—</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="my-reports-section" class="card" hidden>
+        <h3 class="card__heading">Your reports</h3>
+        <div id="my-reports-list"></div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <strong>Aiges</strong>
+        <p class="site-footer__tagline">Safer people. Safer web.</p>
+      </div>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="welcome.html">About</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="guidance.html">Help</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/header-auth.js"></script>
+  <script src="assets/js/track-status.js"></script>
+</body>
+</html>

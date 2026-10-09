@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aiges — Report: Incident Details</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages/report.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html">
+        <span class="brand__mark"><i class="fa-solid fa-shield-halved"></i></span>
+        Aiges
+      </a>
+
+      <a class="nav-toggle" href="#primary-nav" aria-label="Open navigation">
+        <i class="fa-solid fa-bars"></i>
+      </a>
+
+      <nav class="site-nav" id="primary-nav" aria-label="Primary">
+        <a class="site-nav__link" href="../index.html">Home</a>
+        <a class="site-nav__link is-active" href="step-1-details.html">Report Incident</a>
+        <a class="site-nav__link" href="../guidance.html">Guidance</a>
+        <a class="site-nav__link" href="../track-status.html">Track Status</a>
+      </nav>
+
+      <div class="site-header__actions" id="header-actions">
+        <a class="btn btn--primary" href="../login.html">
+          <i class="fa-regular fa-user"></i> Log in
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page">
+
+    <a class="page__back" href="../index.html">
+      <i class="fa-solid fa-arrow-left"></i> Back to home
+    </a>
+
+    <h1 class="page__title">AI-Powered Report Generation</h1>
+    <p class="page__subtitle">
+      Answer a few questions and our AI will create a detailed, well-structured
+      report for you.
+    </p>
+
+    <ol class="stepper">
+      <li class="stepper__step is-active">
+        <span class="stepper__marker">1</span>
+        <span class="stepper__label">Incident details</span>
+      </li>
+      <li class="stepper__step">
+        <span class="stepper__marker">2</span>
+        <span class="stepper__label">Additional info</span>
+      </li>
+      <li class="stepper__step">
+        <span class="stepper__marker">3</span>
+        <span class="stepper__label">Review &amp; AI generate</span>
+      </li>
+      <li class="stepper__step">
+        <span class="stepper__marker">4</span>
+        <span class="stepper__label">Download &amp; submit</span>
+      </li>
+    </ol>
+
+    <div class="split">
+
+      <section class="card">
+        <h3 class="card__heading">Let's start with the basics</h3>
+
+        <form id="details-form">
+          <div class="field">
+            <label class="field__label" for="incident-type">What type of incident is this?</label>
+            <select class="select" id="incident-type">
+              <option value="">Select incident type</option>
+              <option>Phishing</option>
+              <option>Fraud</option>
+              <option>Scam</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="location">Where did it happen?</label>
+            <p class="field__hint">Website URL, app name, email, phone number, etc.</p>
+            <input class="input" id="location" type="text" placeholder="Enter website URL or contact">
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="when">When did it happen?</label>
+            <input class="input" id="when" type="datetime-local">
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="description">Please describe what happened</label>
+            <p class="field__hint">Provide as much detail as you can remember.</p>
+            <textarea class="textarea" id="description" maxlength="1000" placeholder="Start typing..."></textarea>
+            <p class="field__count" id="description-count">0 / 1000</p>
+          </div>
+
+          <p id="details-message" class="field__hint" role="status"></p>
+
+          <div class="action-bar">
+            <button class="btn btn--primary" type="submit" id="continue-btn">
+              Continue <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="split__aside">
+        <section class="card card--tint-accent">
+          <h4 class="card__heading">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> How AI helps you
+          </h4>
+          <ul class="checklist checklist--accent">
+            <li>Understands your answers</li>
+            <li>Creates a structured report</li>
+            <li>Adds relevant technical details</li>
+            <li>Saves your time and effort</li>
+            <li>Ready to download or submit</li>
+          </ul>
+        </section>
+
+        <section class="card card--tint-success">
+          <h4 class="card__heading">
+            <i class="fa-solid fa-lock"></i> Your privacy matters
+          </h4>
+          <p>All information is encrypted and never shared without your consent.</p>
+        </section>
+
+        <p class="callout callout--brand">
+          <i class="fa-regular fa-lightbulb"></i>
+          <span><strong>Tip:</strong> The more details you provide, the more accurate
+          and useful your report will be.</span>
+        </p>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <strong>Aiges</strong>
+        <p class="site-footer__tagline">Safer people. Safer web.</p>
+      </div>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="../welcome.html">About</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="../guidance.html">Help</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/header-auth.js"></script>
+  <script src="../assets/js/report-common.js"></script>
+  <script src="../assets/js/report-step1.js"></script>
+</body>
+</html>

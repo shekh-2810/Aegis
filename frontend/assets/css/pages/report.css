@@ -1,0 +1,359 @@
+/* ==========================================================================
+   Pages: report/step-1 … step-4
+   Shared by the whole four-step report flow.
+   Depends on: tokens.css, base.css, layout.css, components.css
+   ========================================================================== */
+
+/* --- Step 3: information summary ---------------------------------------- */
+
+.info-grid {
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.info-item {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
+}
+
+.info-item i {
+  color: var(--text-muted);
+  margin-top: 5px;
+}
+
+.info-item__label {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.info-item__value {
+  margin-top: var(--space-1);
+  font-weight: 500;
+}
+
+/* --- Step 3: report format options -------------------------------------- */
+
+.report-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+.option {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.option:hover {
+  border-color: var(--brand);
+  background: var(--brand-tint);
+}
+
+.option.is-selected {
+  border: 2px solid var(--brand);
+  background: var(--brand-tint);
+}
+
+.option i {
+  font-size: var(--text-lg);
+  color: var(--accent);
+  margin-bottom: var(--space-3);
+  display: block;
+}
+
+.option h4 {
+  margin-bottom: var(--space-1);
+}
+
+.option p {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+/* --- Step 3: AI document skeleton --------------------------------------- */
+
+.ai-preview {
+  width: 100%;
+  max-width: 200px;
+  margin-inline: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-5);
+}
+
+.ai-preview h4 {
+  margin-bottom: var(--space-5);
+}
+
+.skeleton-line {
+  height: 10px;
+  background: var(--surface-muted);
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-3);
+}
+
+.skeleton-line--short {
+  width: 60%;
+}
+
+/* --- Step 4: report viewer ---------------------------------------------- */
+
+.report-body {
+  display: flex;
+  gap: var(--space-5);
+}
+
+.report-toc {
+  width: 240px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border-soft);
+  padding-right: var(--space-4);
+}
+
+.report-toc__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-1);
+  color: var(--text);
+  font-size: var(--text-base);
+  cursor: pointer;
+}
+
+.report-toc__item:hover {
+  background: var(--surface-muted);
+  color: var(--text);
+}
+
+.report-toc__item.is-active {
+  background: var(--brand-tint);
+  color: var(--brand);
+  font-weight: 600;
+}
+
+.report-preview {
+  flex: 1;
+  min-width: 0;
+}
+
+.paper {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-10);
+  min-height: 560px;
+}
+
+.paper__top {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-6);
+  margin-bottom: var(--space-16);
+  flex-wrap: wrap;
+}
+
+.paper__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.paper__ref {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.paper__title {
+  text-align: center;
+  font-size: var(--text-xl);
+}
+
+.paper__generated {
+  text-align: center;
+  color: var(--text-muted);
+  margin-block: var(--space-2) var(--space-8);
+  font-size: var(--text-base);
+}
+
+.paper__facts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+  background: var(--bg-alt);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+.paper__facts h4 {
+  margin-bottom: var(--space-1);
+}
+
+.paper__facts p {
+  color: var(--text-muted);
+  font-size: var(--text-base);
+}
+
+.paper__footer {
+  margin-top: var(--space-10);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-loose);
+}
+
+.viewer-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border);
+  border-top: none;
+  background: var(--surface);
+  flex-wrap: wrap;
+}
+
+.viewer-controls__group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-base);
+  color: var(--text-muted);
+}
+
+.viewer-controls button {
+  width: 35px;
+  height: 35px;
+  background: var(--surface-muted);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+}
+
+.viewer-controls button:hover {
+  background: var(--brand-tint);
+  color: var(--brand);
+}
+
+/* --- Step 4: next actions ----------------------------------------------- */
+
+.action-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  margin-top: var(--space-3);
+  color: var(--text);
+  font-size: var(--text-base);
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.action-item:hover {
+  background: var(--brand-tint);
+  border-color: var(--brand-tint-soft);
+  color: var(--text);
+}
+
+.action-item__label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.action-item__label i {
+  color: var(--brand);
+  font-size: var(--text-md);
+}
+
+.promo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  flex-wrap: wrap;
+}
+
+.promo p {
+  margin-top: var(--space-1);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+.promo--accent  { background: var(--accent-tint); }
+.promo--success { background: var(--success-tint); }
+.promo--brand   { background: var(--brand-tint); }
+
+.promo .btn {
+  background: var(--surface);
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.promo .btn:hover {
+  background: var(--surface);
+  color: var(--brand);
+}
+
+/* --- Responsive --------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .report-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .report-body {
+    flex-direction: column;
+  }
+
+  .report-toc {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-soft);
+    padding-right: 0;
+    padding-bottom: var(--space-3);
+  }
+}
+
+@media (max-width: 640px) {
+  .report-options {
+    grid-template-columns: 1fr;
+  }
+
+  .paper {
+    padding: var(--space-6);
+  }
+
+  .paper__facts {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,187 @@
+/* ==========================================================================
+   Page: welcome.html — marketing landing page
+   Depends on: tokens.css, base.css, layout.css, components.css
+   ========================================================================== */
+
+/* --- Hero --------------------------------------------------------------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+  padding-block: var(--space-16);
+}
+
+.hero__title {
+  margin-top: var(--space-5);
+  font-size: var(--text-3xl);
+  max-width: 16ch;
+}
+
+.hero__text {
+  margin-top: var(--space-5);
+  color: var(--text-muted);
+  font-size: var(--text-md);
+  max-width: 52ch;
+}
+
+.hero__actions {
+  margin-top: var(--space-8);
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* --- Hero illustration -------------------------------------------------- */
+
+.illustration {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.illustration__shield {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--brand-tint);
+  color: var(--brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.illustration__alerts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.alert-chip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  font-weight: 500;
+}
+
+.alert-chip--danger  { background: var(--danger-tint);  color: var(--danger); }
+.alert-chip--success { background: var(--success-tint); color: var(--success); }
+.alert-chip--warning { background: var(--warning-tint); color: #b45309; }
+
+/* --- Feature trio ------------------------------------------------------- */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  padding-block: var(--space-12);
+}
+
+.feature h3 {
+  margin-top: var(--space-5);
+  font-size: var(--text-md);
+}
+
+.feature p {
+  margin-top: var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--text-base);
+}
+
+/* --- AI band ------------------------------------------------------------ */
+
+.ai-band {
+  background: linear-gradient(135deg, var(--accent), var(--brand));
+  border-radius: var(--radius-2xl);
+  padding: var(--space-12);
+  color: var(--text-invert);
+  text-align: center;
+}
+
+.ai-band h2 {
+  font-size: var(--text-xl);
+}
+
+.ai-band p {
+  margin-top: var(--space-3);
+  color: rgba(255, 255, 255, .85);
+}
+
+.ai-band .btn {
+  margin-top: var(--space-6);
+  background: var(--surface);
+  color: var(--brand);
+}
+
+.ai-band .btn:hover {
+  background: var(--brand-tint);
+  color: var(--brand-dark);
+}
+
+/* --- Stats -------------------------------------------------------------- */
+
+/* Originally declared repeat(4, 1fr) with only three children, which left a
+   dead column. Auto-fit keeps the row balanced whatever the count. */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-6);
+  padding-block: var(--space-16);
+  text-align: center;
+}
+
+.stat__value {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--brand);
+}
+
+.stat__label {
+  margin-top: var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--text-base);
+}
+
+/* --- Responsive --------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+    padding-block: var(--space-12);
+  }
+
+  .hero__title {
+    max-width: none;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero__title {
+    font-size: var(--text-xl);
+  }
+
+  .illustration {
+    padding: var(--space-6);
+  }
+
+  .ai-band {
+    padding: var(--space-8) var(--space-6);
+  }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aiges — My Reports</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/dashboard.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark"><i class="fa-solid fa-shield-halved"></i></span>
+        Aiges
+      </a>
+
+      <a class="nav-toggle" href="#primary-nav" aria-label="Open navigation">
+        <i class="fa-solid fa-bars"></i>
+      </a>
+
+      <nav class="site-nav" id="primary-nav" aria-label="Primary">
+        <a class="site-nav__link" href="index.html">Home</a>
+        <a class="site-nav__link" href="report/step-1-details.html">Report Incident</a>
+        <a class="site-nav__link" href="guidance.html">Guidance</a>
+        <a class="site-nav__link" href="track-status.html">Track Status</a>
+        <a class="site-nav__link is-active" href="dashboard.html">My Reports</a>
+      </nav>
+
+      <div class="site-header__actions" id="header-actions">
+        <a class="btn btn--primary" href="login.html">
+          <i class="fa-regular fa-user"></i> Log in
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page">
+
+    <a class="page__back" href="index.html">
+      <i class="fa-solid fa-arrow-left"></i> Back to home
+    </a>
+
+    <div class="dash-head">
+      <div>
+        <h1>My Reports</h1>
+        <p class="page__lede">Every incident you've reported while logged in — view, edit, or delete.</p>
+      </div>
+      <a class="btn btn--primary" href="report/step-1-details.html">
+        <i class="fa-solid fa-plus"></i> New report
+      </a>
+    </div>
+
+    <p id="dash-message" class="field__hint"></p>
+
+    <div id="dash-empty" class="card card--flat" style="display:none; text-align:center; padding:40px 20px;">
+      <p style="font-size:15px; color:var(--text-muted);">You haven't reported any incidents yet.</p>
+      <a class="btn btn--primary" href="report/step-1-details.html" style="margin-top:12px;">Report your first incident</a>
+    </div>
+
+    <div id="dash-list"></div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <strong>Aiges</strong>
+        <p class="site-footer__tagline">Safer people. Safer web.</p>
+      </div>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="welcome.html">About</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="guidance.html">Help</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/header-auth.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
